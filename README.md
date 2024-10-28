@@ -26,14 +26,15 @@ This guide details the steps to successfully resize the disk space allocated to 
    - Verify the current disk layout using:
 
      ```bash
-     sudo fdisk -l
+     fdisk -l
      ```
 
    - Identify the partition you want to extend (usually the third partition, `/dev/sda3`).
    - Use `growpart` to extend the partition size:
 
      ```bash
-     sudo growpart /dev/sda 3
+     apt install cloud-guest-utils
+     growpart /dev/sda 3
      ```
 
      Follow the on-screen prompts to specify the desired new size.
@@ -45,6 +46,7 @@ This guide details the steps to successfully resize the disk space allocated to 
      - Check the current Logical Volume information:
 
        ```bash
+       apt install lvm2 -y
        lvdisplay
        ```
 
@@ -83,6 +85,11 @@ This guide details the steps to successfully resize the disk space allocated to 
      ```bash
      resize2fs /dev/ubuntu-vg/ubuntu-lv
      ```
+ or
+ 
+   ```bash
+     resize2fs /dev/sda3
+   ```
 
 5. **Verify Changes:**
 
