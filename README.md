@@ -81,5 +81,3 @@ lsblk
 - [Proxmox VE Documentation](https://pve.proxmox.com/wiki/Main_Page)
 - [Ubuntu Documentation](https://help.ubuntu.com/)
 ```
-
-Would you like me to explain any of these changes in more detail?
